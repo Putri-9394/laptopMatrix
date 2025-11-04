@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Matrix - SPK SAW</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fas fa-laptop-code header-icon"></i>
+            <h1>SPK Pemilihan Laptop</h1>
+            <p>Temukan laptop ideal untuk kebutuhan Informatika Anda dengan metode SAW.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2><i class="fas fa-sliders-h"></i> Tentukan Prioritas Anda</h2>
+                <p>Geser slider untuk menentukan bobot (1-5) pada setiap kriteria.</p>
+                
+                <form id="form-bobot">
+                    
+                    <div class="form-group">
+                        <label for="bobot_harga">
+                            <div><i class="fas fa-money-bill-wave"></i> Harga (Cost)</div>
+                            <span class="slider-value" id="val_harga">3</span>
+                        </label>
+                        <input type="range" id="bobot_harga" class="slider" value="3" min="1" max="5" step="1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bobot_ram">
+                            <div><i class="fas fa-memory"></i> RAM (Benefit)</div>
+                            <span class="slider-value" id="val_ram">4</span>
+                        </label>
+                        <input type="range" id="bobot_ram" class="slider" value="4" min="1" max="5" step="1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bobot_cpu">
+                            <div><i class="fas fa-microchip"></i> Skor CPU (Benefit)</div>
+                            <span class="slider-value" id="val_cpu">5</span>
+                        </label>
+                        <input type="range" id="bobot_cpu" class="slider" value="5" min="1" max="5" step="1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bobot_gpu">
+                            <div><i class="fas fa-gamepad"></i> Skor GPU (Benefit)</div>
+                            <span class="slider-value" id="val_gpu">3</span>
+                        </label>
+                        <input type="range" id="bobot_gpu" class="slider" value="3" min="1" max="5" step="1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bobot_ssd">
+                            <div><i class="fas fa-hdd"></i> Kapasitas SSD (Benefit)</div>
+                            <span class="slider-value" id="val_ssd">2</span>
+                        </label>
+                        <input type="range" id="bobot_ssd" class="slider" value="2" min="1" max="5" step="1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bobot_berat">
+                            <div><i class="fas fa-weight-hanging"></i> Berat Laptop (Cost)</div>
+                            <span class="slider-value" id="val_berat">2</span>
+                        </label>
+                        <input type="range" id="bobot_berat" class="slider" value="2" min="1" max="5" step="1">
+                    </div>
+                    
+                    <button type="submit" id="tombol-hitung">
+                        <i class="fas fa-calculator"></i> Hitung Rekomendasi
+                    </button>
+                </form>
+            </section>
+
+            <section class="hasil-section">
+                <h2><i class="fas fa-trophy"></i> Hasil Peringkat</h2>
+                
+                <div id="loading" class="spinner-container hidden">
+                    <div class="spinner"></div>
+                    <p>Menganalisis Pilihan...</p>
+                </div>
+                
+                <div id="hasil-ranking">
+                    <div id="hasil-placeholder" class="placeholder-content">
+                        <i class="fas fa-magic"></i>
+                        <h3>Menunggu Preferensi Anda</h3>
+                        <p>Atur slider di samping untuk menemukan laptop ideal Anda.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
